@@ -231,6 +231,32 @@ xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 "   PLUGIN CONFIG
 " =============================================================================
 
+" ALE
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ale_enabled = 1
+" For quick startup
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
+let g:ale_float_preview=1
+let g:ale_fixers = {
+    \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \   'javascript': ['prettier'],
+    \   'css': ['prettier'],
+    \   'html': ['prettier'],
+    \   'markdown': ['prettier'],
+    \   'json': ['prettier'],
+    \   'yaml': ['prettier'],
+    \}
+nmap <silent> [a <Plug>(ale_previous_wrap)
+nmap <silent> ]a <Plug>(ale_next_wrap)
+
+" Lightline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" --INSERT-- is unncessary because of lightline
+set noshowmode
+
 " =============================================================================
 "   LOCAL CONFIG
 " =============================================================================
